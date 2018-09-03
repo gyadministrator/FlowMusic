@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">瀑布音乐</string>
+    <string name="reload">重新加载</string>
+    <string name="no_data">没有数据哎</string>
+    <string name="wait">等待加载...</string>
+    <string name="title">标题</string>
+    <string name="singer">歌手</string>
+    <string name="hint">请输入关键词</string>
+    <string name="sure">确定</string>
+    <string name="copyright">Copyright © 2018</string>
+</resources>
