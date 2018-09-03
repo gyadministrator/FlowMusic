@@ -18,6 +18,7 @@ import com.gy.android.flowmusic.model.Lrc;
 import com.gy.android.flowmusic.model.PlaySong;
 import com.gy.android.flowmusic.model.RecommendMusic;
 import com.gy.android.flowmusic.presenter.MainPresenter;
+import com.gy.android.flowmusic.utils.ImmersedStatusbarUtils;
 import com.gy.android.flowmusic.utils.LoadingDialog;
 import com.gy.android.flowmusic.utils.MusicUtils;
 import com.gy.android.flowmusic.utils.NetWorkUtils;
@@ -45,6 +46,7 @@ public class MainActivity extends BaseActivity implements IMainView, XRecyclerVi
     private TextView bar_play;
     private TextView bar_title;
     private TextView bar_lrc;
+    private LinearLayout lin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class MainActivity extends BaseActivity implements IMainView, XRecyclerVi
         initView();
         mainPresenter = new MainPresenter(this);
         recyclerView.setLoadingListener(this);
+        /*设置沉侵式导航栏*/
+        ImmersedStatusbarUtils.initAfterSetContentView(this, lin);
         initData(num);
     }
 
@@ -79,6 +83,7 @@ public class MainActivity extends BaseActivity implements IMainView, XRecyclerVi
         bar_play = findViewById(R.id.bar_play);
         bar_title = findViewById(R.id.bar_title);
         bar_lrc = findViewById(R.id.bar_lrc);
+        lin=findViewById(R.id.lin);
     }
 
     @Override

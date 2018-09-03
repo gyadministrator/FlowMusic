@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import com.gy.android.flowmusic.model.PlaySong;
 import com.gy.android.flowmusic.model.SearchSong;
 import com.gy.android.flowmusic.presenter.PlaySongPresenter;
 import com.gy.android.flowmusic.presenter.SearchPresenter;
+import com.gy.android.flowmusic.utils.ImmersedStatusbarUtils;
 import com.gy.android.flowmusic.utils.LoadingDialog;
 import com.gy.android.flowmusic.utils.MusicUtils;
 import com.gy.android.flowmusic.utils.NetWorkUtils;
@@ -34,6 +36,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
     private ListAdapter listAdapter;
     private PlaySongPresenter playSongPresenter;
     private List<SearchSong.SongBean> list;
+    private LinearLayout lin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
         setContentView(R.layout.activity_search);
         searchPresenter = new SearchPresenter(this);
         playSongPresenter = new PlaySongPresenter(this);
+        /*设置沉侵式导航栏*/
+        ImmersedStatusbarUtils.initAfterSetContentView(this, lin);
         initView();
     }
 
@@ -49,6 +54,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
         key = findViewById(R.id.key);
         ok = findViewById(R.id.ok);
         listView = findViewById(R.id.listView);
+        lin = findViewById(R.id.lin);
 
         back.setOnClickListener(this);
         ok.setOnClickListener(this);
