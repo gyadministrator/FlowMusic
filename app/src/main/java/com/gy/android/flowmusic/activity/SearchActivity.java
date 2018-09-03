@@ -36,7 +36,6 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
     private ListAdapter listAdapter;
     private PlaySongPresenter playSongPresenter;
     private List<SearchSong.SongBean> list;
-    private LinearLayout lin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +43,6 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
         setContentView(R.layout.activity_search);
         searchPresenter = new SearchPresenter(this);
         playSongPresenter = new PlaySongPresenter(this);
-        /*设置沉侵式导航栏*/
-        ImmersedStatusbarUtils.initAfterSetContentView(this, lin);
         initView();
     }
 
@@ -54,7 +51,6 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
         key = findViewById(R.id.key);
         ok = findViewById(R.id.ok);
         listView = findViewById(R.id.listView);
-        lin = findViewById(R.id.lin);
 
         back.setOnClickListener(this);
         ok.setOnClickListener(this);

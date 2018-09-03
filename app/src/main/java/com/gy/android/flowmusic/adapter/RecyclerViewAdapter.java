@@ -59,7 +59,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             Picasso.get().load(listBean.getPic_big()).error(R.mipmap.icon).placeholder(R.mipmap.icon).into(holder.music_bg);
             Picasso.get().load(listBean.getPic_small()).error(R.mipmap.icon).placeholder(R.mipmap.icon).into(holder.music_image);
             holder.music_singer.setText(listBean.getAuthor());
-            holder.music_title.setText(listBean.getTitle());
+            String title = listBean.getTitle();
+            if (title.length() > 10) {
+                title = title.substring(0, 10) + "...";
+            }
+            holder.music_title.setText(title);
             holder.music_play.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

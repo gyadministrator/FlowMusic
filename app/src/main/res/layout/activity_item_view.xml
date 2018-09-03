@@ -42,7 +42,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
             android:maxLines="2"
             android:paddingBottom="40dp"
@@ -54,7 +53,9 @@
             android:id="@+id/music_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
             android:background="@mipmap/music_play" />
     </RelativeLayout>
 </FrameLayout>
